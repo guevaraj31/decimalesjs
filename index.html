@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Decimales</title>
+</head>
+<body>
+	<h3>Formateador</h3>
+	<p>Formatea los valores ingresados, con separadores de mil<br>
+	, solo para valores Enteros.
+	</p>
+	<form>
+		<label>Valor 1:</label>
+		<input type="text" name="valoruno" id="valoruno_show" onblur="setNumber()">
+		<input type="hidden" name="valordos" id="valoruno">
+	</form>
+</body>
+</html>
+<script type="text/javascript">
+
+function setNumber()
+{
+	mileageCurrent = document.getElementById("valoruno_show");
+	mileageInt = document.getElementById("valoruno");
+	mileageInt.value = mileageCurrent.value;
+ 	mileageCurrent.value = mileageCurrent.value.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ".");
+}
+
+</script>
